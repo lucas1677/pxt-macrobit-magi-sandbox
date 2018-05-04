@@ -4,12 +4,12 @@
  */
 //% weight=10 icon="\uf21c" color=#000000 block="Magibit Actuator"
 namespace MagibitActuator {
-    enum Motor {
+    export enum Motor {
         M1 = 0,
         M2 = 1
     }
 
-    enum MotorDirection {
+    export enum MotorDirection {
         Forward = 0,
         Backward = 1
     }
