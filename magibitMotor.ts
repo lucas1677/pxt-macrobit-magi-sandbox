@@ -24,20 +24,18 @@ namespace motor {
     //% weight=80
     export function setMotorSpeed(motor: Motor, direction: MotorDirection, speed: number): void {
 
-
     }
 
-    // /**
-    //  * stop all motor
-    //  */
-    // //% blockId=magi_motor_stop_all
-    // //% blockGap=8
-    // //% advanced=false
-    // //% block="Motor stop all"
-    // //% weight=50
-    // export function stopAllMotor() {
-    //     for (let motor in Motor) {
-    //         setMotorSpeed(motor, MotorDirection.Forward, 0);
-    //     }
-    // }
+    /**
+     * stop all motor
+     */
+    //% blockId=magi_motor_stop_all
+    //% blockGap=8
+    //% advanced=false
+    //% block="Motor stop all"
+    //% weight=50
+    export function stopAllMotor() {
+        setMotorSpeed(Motor.M1, MotorDirection.Forward, 0);
+        setMotorSpeed(Motor.M2, MotorDirection.Forward, 0);
+    }
 }
