@@ -1,0 +1,5 @@
+{
+  "MagibitActuator.setMotorSpeed|block": "🍎 Motor |%motor| running with direction |%direction| and speed |%speed|",
+  "MagibitActuator|block": "Magibit Actuator",
+  "{id:category}MagibitActuator": "MagibitActuator"
+}

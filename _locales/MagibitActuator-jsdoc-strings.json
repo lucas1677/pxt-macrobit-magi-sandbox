@@ -1,0 +1,4 @@
+{
+  "MagibitActuator": "support for motor",
+  "MagibitActuator.setMotorSpeed": "change motor's speed and direction"
+}
