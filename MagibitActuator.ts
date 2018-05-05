@@ -4,13 +4,13 @@
 //% weight=10 icon="\uf21c" color=#000000 block="Magibit Actuator"
 namespace MagibitActuator {
     export enum Motor {
-        M1,
-        M2
+        M1 = 0,
+        M2 = 1
     }
 
     export enum MotorDirection {
-        Forward,
-        Backward
+        Forward = 0,
+        Backward = 1
     }
 
     export enum ServoPin {
@@ -40,12 +40,12 @@ namespace MagibitActuator {
     //% weight=80
     //% speed.min=0 speed.max=1023
     export function motorSetSpeed(motor: Motor, direction: MotorDirection, speed: number): void {
-        let directionVal = direction == MotorDirection.Forward ? 0 : 1;
+
         if (motor == Motor.M1) {
-            pins.digitalWritePin(DigitalPin.P8, directionVal);
+            pins.digitalWritePin(DigitalPin.P8, direction);
             pins.analogWritePin(AnalogPin.P12, speed);
         } else if(motor == Motor.M2) {
-            pins.digitalWritePin(DigitalPin.P14, directionVal)
+            pins.digitalWritePin(DigitalPin.P14, direction);
             pins.analogWritePin(AnalogPin.P15, speed)
         }
     }
