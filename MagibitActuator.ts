@@ -50,7 +50,6 @@ namespace MagibitActuator {
         }
     }
 
-
     /**
      * stop all motor
      */
