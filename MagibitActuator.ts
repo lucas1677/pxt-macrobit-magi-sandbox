@@ -62,15 +62,15 @@ namespace MagibitActuator {
     }
 
     /**
-     * set servo angle v3
+     * set servo angle v4
      */
     //% blockId=magibit_actuator_servo_set_angle
     //% block="Servo |%pinId| rotate to angle |%angle|°"
     //% angle.min=0 angle.max=180
     //% weight=80
     export function servoSetAngle(pinId: ServoPin, angle: number): void {
-        pins.analogSetPeriod(getAnalogPin(pinId), 20000);
-        pins.servoWritePin(getAnalogPin(pinId), angle);
+        // pins.analogSetPeriod(getAnalogPin(pinId), 20000);
+        // pins.servoWritePin(getAnalogPin(pinId), angle);
     }
 
     function getAnalogPin(pinNumber: number): AnalogPin {
