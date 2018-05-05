@@ -62,7 +62,7 @@ namespace MagibitActuator {
     }
 
     /**
-     * set servo angle
+     * set servo angle v1
      */
     //% blockId=magibit_actuator_servo_set_angle
     //% block="Servo |%pin| rotate to angle |%angle|°"
