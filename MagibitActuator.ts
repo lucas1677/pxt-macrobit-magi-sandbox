@@ -62,7 +62,7 @@ namespace MagibitActuator {
     }
 
     /**
-     * set servo angle v5
+     * set servo angle v6
      */
     //% blockId=magibit_actuator_servo_set_angle
     //% block="Servo |%pinId| rotate to angle |%angle|°"
@@ -70,49 +70,6 @@ namespace MagibitActuator {
     //% weight=80
     export function servoSetAngle(pinId: ServoPin, angle: number): void {
         return null;
-    }
-
-    function getAnalogPin(pinNumber: number): AnalogPin {
-        switch (pinNumber) {
-            case AnalogPin.P0:
-                return AnalogPin.P0;
-            case AnalogPin.P1:
-                return AnalogPin.P1;
-            case AnalogPin.P2:
-                return AnalogPin.P2;
-            case AnalogPin.P3:
-                return AnalogPin.P3;
-            case AnalogPin.P4:
-                return AnalogPin.P4;
-            case AnalogPin.P5:
-                return AnalogPin.P5;
-            case AnalogPin.P6:
-                return AnalogPin.P6;
-            case AnalogPin.P7:
-                return AnalogPin.P7;
-            case AnalogPin.P8:
-                return AnalogPin.P8;
-            case AnalogPin.P9:
-                return AnalogPin.P9;
-            case AnalogPin.P10:
-                return AnalogPin.P10;
-            case AnalogPin.P11:
-                return AnalogPin.P11;
-            case AnalogPin.P12:
-                return AnalogPin.P12;
-            case AnalogPin.P13:
-                return AnalogPin.P13;
-            case AnalogPin.P14:
-                return AnalogPin.P14;
-            case AnalogPin.P15:
-                return AnalogPin.P15;
-            case AnalogPin.P16:
-                return AnalogPin.P16;
-            case AnalogPin.P19:
-                return AnalogPin.P19;
-            case AnalogPin.P20:
-                return AnalogPin.P20;
-        }
     }
 
     /**
