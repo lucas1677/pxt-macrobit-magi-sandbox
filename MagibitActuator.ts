@@ -14,11 +14,11 @@ namespace MagibitActuator {
     }
 
     export enum ServoPin {
-        P0,
-        P1,
-        P2,
-        P13,
-        P16
+        P0 = AnalogPin.P0,
+        P1 = AnalogPin.P1,
+        P2 = AnalogPin.P2,
+        P13 = AnalogPin.P13,
+        P16 = AnalogPin.P16
     }
 
     export enum LEDPin {
@@ -44,7 +44,7 @@ namespace MagibitActuator {
         if (motor == Motor.M1) {
             pins.digitalWritePin(DigitalPin.P8, direction);
             pins.analogWritePin(AnalogPin.P12, speed);
-        } else if(motor == Motor.M2) {
+        } else if (motor == Motor.M2) {
             pins.digitalWritePin(DigitalPin.P14, direction);
             pins.analogWritePin(AnalogPin.P15, speed)
         }
@@ -62,14 +62,57 @@ namespace MagibitActuator {
     }
 
     /**
-     * set servo angle v1
+     * set servo angle v2
      */
     //% blockId=magibit_actuator_servo_set_angle
-    //% block="Servo |%pin| rotate to angle |%angle|°"
+    //% block="Servo |%pinId| rotate to angle |%angle|°"
     //% angle.min=0 angle.max=180
     //% weight=80
-    export function servoSetAngle(pin: ServoPin, angle: number): void {
-        pins.servoWritePin(AnalogPin.P16, angle);
+    export function servoSetAngle(pinId: ServoPin, angle: number): void {
+        pins.analogSetPeriod(getAnalogPin(pinId), 20000);
+    }
+
+    function getAnalogPin(pinNumber: number): AnalogPin {
+        switch (pinNumber) {
+            case AnalogPin.P0:
+                return AnalogPin.P0;
+            case AnalogPin.P1:
+                return AnalogPin.P1;
+            case AnalogPin.P2:
+                return AnalogPin.P2;
+            case AnalogPin.P3:
+                return AnalogPin.P3;
+            case AnalogPin.P4:
+                return AnalogPin.P4;
+            case AnalogPin.P5:
+                return AnalogPin.P5;
+            case AnalogPin.P6:
+                return AnalogPin.P6;
+            case AnalogPin.P7:
+                return AnalogPin.P7;
+            case AnalogPin.P8:
+                return AnalogPin.P8;
+            case AnalogPin.P9:
+                return AnalogPin.P9;
+            case AnalogPin.P10:
+                return AnalogPin.P10;
+            case AnalogPin.P11:
+                return AnalogPin.P11;
+            case AnalogPin.P12:
+                return AnalogPin.P12;
+            case AnalogPin.P13:
+                return AnalogPin.P13;
+            case AnalogPin.P14:
+                return AnalogPin.P14;
+            case AnalogPin.P15:
+                return AnalogPin.P15;
+            case AnalogPin.P16:
+                return AnalogPin.P16;
+            case AnalogPin.P19:
+                return AnalogPin.P19;
+            case AnalogPin.P20:
+                return AnalogPin.P20;
+        }
     }
 
     /**
