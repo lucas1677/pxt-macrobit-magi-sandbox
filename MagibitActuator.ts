@@ -1,4 +1,3 @@
-
 /**
  * support for motor
  */
@@ -41,7 +40,14 @@ namespace MagibitActuator {
     //% weight=80
     //% speed.min=0 speed.max=1023
     export function motorSetSpeed(motor: Motor, direction: MotorDirection, speed: number): void {
-        return null;
+        let directionVal = direction == MotorDirection.Forward ? 0 : 1;
+        if (motor == Motor.M1) {
+            pins.digitalWritePin(DigitalPin.P8, directionVal);
+            pins.analogWritePin(AnalogPin.P12, speed);
+        } else if(motor == Motor.M2) {
+            pins.digitalWritePin(DigitalPin.P14, directionVal)
+            pins.analogWritePin(AnalogPin.P15, speed)
+        }
     }
 
 
