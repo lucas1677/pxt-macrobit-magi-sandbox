@@ -69,7 +69,7 @@ namespace MagibitActuator {
     //% angle.min=0 angle.max=180
     //% weight=80
     export function servoSetAngle(pin: ServoPin, angle: number): void {
-        return null;
+        pins.servoWritePin(AnalogPin.P16, angle);
     }
 
     /**
