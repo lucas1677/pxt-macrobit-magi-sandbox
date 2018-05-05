@@ -91,9 +91,9 @@ namespace MagibitActuator {
      * set LED'S brightness from A to B
      */
     //% blockId=magibit_actuator_led_set_brightness_range
-    //% block="Motor |%motor| running with direction |%direction| and speed |%speed|"
+    //% block="LED set range"
     //% weight=80
-    export function ledSetBrightnessRange(motor: Motor, direction: MotorDirection, speed: number): void {
+    export function ledSetBrightnessRange(): void {
         return null;
     }
 }
