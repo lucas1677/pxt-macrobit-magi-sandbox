@@ -1,7 +1,7 @@
 /**
  * support for motor
  */
-//% weight=10 icon="\uf21c" color=#000000 block="Magibit Actuator"
+//% weight=10 icon="\uf21c" color=#FF7210 block="Magibit Actuator"
 namespace MagibitActuator {
     export enum Motor {
         M1 = 0,
