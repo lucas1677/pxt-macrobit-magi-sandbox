@@ -33,7 +33,7 @@ namespace MagibitActuator {
     }
 
     /**
-     * change motor's speed and direction
+     * change motor's speed and direction v2
      */
     //% blockId=magibit_actuator_motor_set_speed
     //% block="Motor |%motor| running with direction |%direction| and speed |%speed|"
