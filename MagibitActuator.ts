@@ -58,7 +58,8 @@ namespace MagibitActuator {
     //% block="Motor stop all"
     //% weight=80
     export function motorStopAll(): void {
-        return null;
+        motorSetSpeed(Motor.M1, MotorDirection.Forward, 0);
+        motorSetSpeed(Motor.M2, MotorDirection.Forward, 0);
     }
 
     /**
