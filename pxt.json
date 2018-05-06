@@ -1,9 +1,10 @@
 {
     "name": "MagibitActuator",
+    "version": "v1804061055",
     "description": "AdaFruit MagibitActuator driver",
     "license": "MIT",
     "dependencies": {
-        "core": "v1804061055"
+        "core": "*"
     },
     "files": [
         "README.md",
