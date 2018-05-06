@@ -1,5 +1,10 @@
 {
-  "MagibitActuator.setMotorSpeed|block": "🍎 Motor |%motor| running with direction |%direction| and speed |%speed|",
+  "MagibitActuator.ledSetBrightnessRange|block": "LED set range",
+  "MagibitActuator.ledSetBrightness|block": "LED |%pin| set brightness |%brightness|",
+  "MagibitActuator.ledSetOnOff|block": "LED |%pin| |%state|",
+  "MagibitActuator.motorSetSpeed|block": "Motor |%motor| running with direction |%direction| and speed |%speed|",
+  "MagibitActuator.motorStopAll|block": "Motor stop all",
+  "MagibitActuator.servoSetAngle|block": "Servo |%pinId| rotate to angle |%angle|°",
   "MagibitActuator|block": "Magibit Actuator",
   "{id:category}MagibitActuator": "MagibitActuator"
 }

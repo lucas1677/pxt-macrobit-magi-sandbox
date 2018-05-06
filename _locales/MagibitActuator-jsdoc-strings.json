@@ -1,4 +1,9 @@
 {
   "MagibitActuator": "support for motor",
-  "MagibitActuator.setMotorSpeed": "change motor's speed and direction"
+  "MagibitActuator.ledSetBrightness": "set LED'S brightness",
+  "MagibitActuator.ledSetBrightnessRange": "set LED'S brightness from A to B",
+  "MagibitActuator.ledSetOnOff": "turn LED on or off",
+  "MagibitActuator.motorSetSpeed": "change motor's speed and direction",
+  "MagibitActuator.motorStopAll": "stop all motor",
+  "MagibitActuator.servoSetAngle": "set servo angle v7"
 }

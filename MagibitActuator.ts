@@ -14,11 +14,11 @@ namespace MagibitActuator {
     }
 
     export enum ServoPin {
-        P0 = AnalogPin.P0,
-        P1 = AnalogPin.P1,
-        P2 = AnalogPin.P2,
-        P13 = AnalogPin.P13,
-        P16 = AnalogPin.P16
+        P0 = 7,  // MICROBIT_ID_IO_P0,
+        P1 = 8,  // MICROBIT_ID_IO_P1,
+        P2 = 9,  // MICROBIT_ID_IO_P2,
+        P13 = 20,  // MICROBIT_ID_IO_P13,
+        P16 = 23,  // MICROBIT_ID_IO_P16
     }
 
     export enum LEDPin {
