@@ -60,7 +60,7 @@ namespace MagibitActuator {
 
 
     /**
-     * set LED'S brightness - v71208
+     * set LED'S brightness
      */
     //% blockId=magibit_actuator_led_set_brightness
     //% block="LED |%pin| set brightness |%brightness|"
