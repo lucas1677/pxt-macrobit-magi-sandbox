@@ -3,6 +3,9 @@
  */
 //% weight=10 icon="\uf21c" color=#FF7210 block="Magibit Actuator"
 namespace MagibitActuator {
+    import filterInnerTypeNumber = magibit.filterInnerTypeNumber;
+    import InnerNumberType = magibit.InnerNumberType;
+
     export enum Motor {
         M1,
         M2
@@ -24,14 +27,6 @@ namespace MagibitActuator {
     export enum LEDState {
         ON,
         OFF
-    }
-
-    /**
-     * 定义项目中使用的内部数据类型
-     */
-    export enum InnerNumberType {
-        ANALOG,
-        DIGITAL
     }
 
     /**
@@ -113,31 +108,5 @@ namespace MagibitActuator {
         }
     }
 
-    /**
-     * 项目内部的数据类型非法制过滤
-     * @param {MagibitActuator.InnerNumberType} innerType
-     * @param {number} analogNumber
-     * @returns {number}
-     */
-    export function filterInnerTypeNumber(innerType: InnerNumberType, analogNumber: number): number {
-        switch (innerType) {
-            case InnerNumberType.ANALOG: {
-                if (analogNumber < 0 || analogNumber == null) {
-                    return 0;
-                } else if (analogNumber > 1023) {
-                    return 1023;
-                } else {
-                    return analogNumber;
-                }
-            }
-            case InnerNumberType.DIGITAL: {
-                if (analogNumber < 0 || analogNumber == null) {
-                    return 0;
-                } else {
-                    return analogNumber;
-                }
-            }
-        }
-    }
 
 }
