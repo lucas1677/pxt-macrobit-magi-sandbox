@@ -43,6 +43,7 @@ namespace MagibitActuator {
     //% speed.min=0 speed.max=1023
     export function motorSetSpeed(motor: Motor, direction: MotorDirection, speed: number): void {
 
+        speed = filterInnerTypeNumber(InnerNumberType.ANALOG, speed);
 
         if (motor == Motor.M1) {
             pins.digitalWritePin(DigitalPin.P8, direction);
@@ -73,6 +74,8 @@ namespace MagibitActuator {
     //% weight=80
     //% brightness.min=0 brightness.max=1023
     export function ledSetBrightness(pin: LEDPin, brightness: number): void {
+
+        brightness = filterInnerTypeNumber(InnerNumberType.ANALOG, brightness);
 
         switch (pin) {
             case LEDPin.P0:
@@ -107,6 +110,33 @@ namespace MagibitActuator {
             case LEDState.OFF:
                 ledSetBrightness(pin, 0);
                 break;
+        }
+    }
+
+    /**
+     * 项目内部的数据类型非法制过滤
+     * @param {MagibitActuator.InnerNumberType} innerType
+     * @param {number} analogNumber
+     * @returns {number}
+     */
+    export function filterInnerTypeNumber(innerType: InnerNumberType, analogNumber: number): number {
+        switch (innerType) {
+            case InnerNumberType.ANALOG: {
+                if (analogNumber < 0 || analogNumber == null) {
+                    return 0;
+                } else if (analogNumber > 1023) {
+                    return 1023;
+                } else {
+                    return analogNumber;
+                }
+            }
+            case InnerNumberType.DIGITAL: {
+                if (analogNumber < 0 || analogNumber == null) {
+                    return 0;
+                } else {
+                    return analogNumber;
+                }
+            }
         }
     }
 
