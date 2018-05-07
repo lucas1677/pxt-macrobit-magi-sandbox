@@ -119,7 +119,7 @@ namespace MagibitActuator {
      * @param {number} analogNumber
      * @returns {number}
      */
-    function filterInnerTypeNumber(innerType: InnerNumberType, analogNumber: number): number {
+    export function filterInnerTypeNumber(innerType: InnerNumberType, analogNumber: number): number {
         switch (innerType) {
             case InnerNumberType.ANALOG: {
                 if (analogNumber < 0 || analogNumber == null) {
