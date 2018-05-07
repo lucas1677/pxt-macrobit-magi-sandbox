@@ -3,8 +3,6 @@
  */
 //% weight=10 icon="\uf21c" color=#FF7210 block="Magibit Actuator"
 namespace MagibitActuator {
-    import filterInnerTypeNumber = magibit.filterInnerTypeNumber;
-    import InnerNumberType = magibit.InnerNumberType;
 
     export enum Motor {
         M1,
@@ -38,7 +36,7 @@ namespace MagibitActuator {
     //% speed.min=0 speed.max=1023
     export function motorSetSpeed(motor: Motor, direction: MotorDirection, speed: number): void {
 
-        speed = filterInnerTypeNumber(InnerNumberType.ANALOG, speed);
+        speed = magibit.filterInnerTypeNumber(magibit.InnerNumberType.ANALOG, speed);
 
         if (motor == Motor.M1) {
             pins.digitalWritePin(DigitalPin.P8, direction);
@@ -70,7 +68,7 @@ namespace MagibitActuator {
     //% brightness.min=0 brightness.max=1023
     export function ledSetBrightness(pin: LEDPin, brightness: number): void {
 
-        brightness = filterInnerTypeNumber(InnerNumberType.ANALOG, brightness);
+        brightness = magibit.filterInnerTypeNumber(magibit.InnerNumberType.ANALOG, brightness);
 
         switch (pin) {
             case LEDPin.P0:
