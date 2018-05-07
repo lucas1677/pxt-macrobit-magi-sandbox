@@ -36,14 +36,14 @@ namespace MagibitActuator {
     //% speed.min=0 speed.max=1023
     export function motorSetSpeed(motor: Motor, direction: MotorDirection, speed: number): void {
 
-        speed = magibit.filterInnerTypeNumber(magibit.InnerNumberType.ANALOG, speed);
+        let speedVal = magibit.filterInnerTypeNumber(magibit.InnerNumberType.ANALOG, speed);
 
         if (motor == Motor.M1) {
             pins.digitalWritePin(DigitalPin.P8, direction);
-            pins.analogWritePin(AnalogPin.P12, speed);
+            pins.analogWritePin(AnalogPin.P12, speedVal);
         } else if (motor == Motor.M2) {
             pins.digitalWritePin(DigitalPin.P14, direction);
-            pins.analogWritePin(AnalogPin.P15, speed)
+            pins.analogWritePin(AnalogPin.P15, speedVal)
         }
     }
 
@@ -68,23 +68,23 @@ namespace MagibitActuator {
     //% brightness.min=0 brightness.max=1023
     export function ledSetBrightness(pin: LEDPin, brightness: number): void {
 
-        brightness = magibit.filterInnerTypeNumber(magibit.InnerNumberType.ANALOG, brightness);
+        let brightnessVal = magibit.filterInnerTypeNumber(magibit.InnerNumberType.ANALOG, brightness);
 
         switch (pin) {
             case LEDPin.P0:
-                pins.analogWritePin(AnalogPin.P0, brightness);
+                pins.analogWritePin(AnalogPin.P0, brightnessVal);
                 break;
             case LEDPin.P1:
-                pins.analogWritePin(AnalogPin.P1, brightness);
+                pins.analogWritePin(AnalogPin.P1, brightnessVal);
                 break;
             case LEDPin.P2:
-                pins.analogWritePin(AnalogPin.P2, brightness);
+                pins.analogWritePin(AnalogPin.P2, brightnessVal);
                 break;
             case LEDPin.P13:
-                pins.analogWritePin(AnalogPin.P13, brightness);
+                pins.analogWritePin(AnalogPin.P13, brightnessVal);
                 break;
             case LEDPin.P16:
-                pins.analogWritePin(AnalogPin.P16, brightness);
+                pins.analogWritePin(AnalogPin.P16, brightnessVal);
                 break;
         }
     }
