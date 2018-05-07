@@ -4,27 +4,21 @@
 //% weight=10 icon="\uf21c" color=#FF7210 block="Magibit Actuator"
 namespace MagibitActuator {
     export enum Motor {
-        M1 = 0,
-        M2 = 1
+        M1,
+        M2
     }
 
     export enum MotorDirection {
-        Forward = 0,
-        Backward = 1
-    }
-
-    export enum ServoPin {
-        P0 = 7,  // MICROBIT_ID_IO_P0,
-        P1 = 8,  // MICROBIT_ID_IO_P1,
-        P2 = 9,  // MICROBIT_ID_IO_P2,
-        P13 = 20,  // MICROBIT_ID_IO_P13,
-        P16 = 23,  // MICROBIT_ID_IO_P16
+        Forward,
+        Backward
     }
 
     export enum LEDPin {
         P0,
         P1,
-        P2
+        P2,
+        P13,
+        P16
     }
 
     export enum LEDState {
@@ -61,16 +55,6 @@ namespace MagibitActuator {
         motorSetSpeed(Motor.M2, MotorDirection.Forward, 0);
     }
 
-    /**
-     * set servo angle v9
-     */
-    //% blockId=magibit_actuator_servo_set_angle
-    //% block="Servo |%pinId| rotate to angle |%angle|°"
-    //% angle.min=0 angle.max=180
-    //% weight=80
-    export function servoSetAngle(pinId: ServoPin, angle: number): void {
-        return null;
-    }
 
     /**
      * set LED'S brightness
@@ -78,9 +62,25 @@ namespace MagibitActuator {
     //% blockId=magibit_actuator_led_set_brightness
     //% block="LED |%pin| set brightness |%brightness|"
     //% weight=80
-    //% brightness.min=0 brightness.max=255
+    //% brightness.min=0 brightness.max=1023
     export function ledSetBrightness(pin: LEDPin, brightness: number): void {
-        return null;
+        switch (pin) {
+            case LEDPin.P0:
+                pins.analogWritePin(AnalogPin.P0, brightness);
+                break;
+            case LEDPin.P1:
+                pins.analogWritePin(AnalogPin.P1, brightness);
+                break;
+            case LEDPin.P2:
+                pins.analogWritePin(AnalogPin.P2, brightness);
+                break;
+            case LEDPin.P13:
+                pins.analogWritePin(AnalogPin.P13, brightness);
+                break;
+            case LEDPin.P16:
+                pins.analogWritePin(AnalogPin.P16, brightness);
+                break;
+        }
     }
 
     /**
@@ -90,16 +90,9 @@ namespace MagibitActuator {
     //% block="LED |%pin| |%state|"
     //% weight=80
     export function ledSetOnOff(pin: LEDPin, state: LEDState): void {
-        return null;
-    }
-
-    /**
-     * set LED'S brightness from A to B
-     */
-    //% blockId=magibit_actuator_led_set_brightness_range
-    //% block="LED set range"
-    //% weight=80
-    export function ledSetBrightnessRange(): void {
-        return null;
+        switch (state) {
+            case LEDState.ON: ledSetBrightness(pin, 1023); break;
+            case LEDState.OFF: ledSetBrightness(pin, 0); break;
+        }
     }
 }
