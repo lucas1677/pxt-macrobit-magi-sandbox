@@ -2,7 +2,7 @@
  * support for motor
  */
 //% weight=10 icon="\uf21c" color=#FF7210 block="Magibit Actuator"
-namespace magibit.actuator {
+namespace magibit {
 
     /**
      * change motor's speed and direction
