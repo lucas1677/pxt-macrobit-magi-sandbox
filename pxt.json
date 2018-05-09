@@ -10,6 +10,7 @@
         "README.md",
         "MagibitActuator.ts",
         "tools.ts",
+        "enum.d.ts",
         "_locales/ja/MagibitActuator-strings.json",
         "_locales/zh/MagibitActuator-strings.json"
     ],
