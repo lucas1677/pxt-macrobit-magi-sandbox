@@ -2,13 +2,7 @@
  * support for motor
  */
 //% weight=10 icon="\uf21c" color=#FF7210 block="Magibit Actuator"
-namespace MagibitActuator {
-
-    import Motor = magibit.Motor;
-    import MotorDirection = magibit.MotorDirection;
-    import InnerNumberType = magibit.InnerNumberType;
-    import LEDPin = magibit.LEDPin;
-    import LEDState = magibit.LEDState;
+namespace magibit.actuator {
 
     /**
      * change motor's speed and direction
