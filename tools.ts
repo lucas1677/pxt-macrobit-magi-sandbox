@@ -1,11 +1,5 @@
 namespace magibit {
-    /**
-     * 定义项目中使用的内部数据类型
-     */
-    export enum InnerNumberType {
-        ANALOG,
-        DIGITAL
-    }
+
     /**
      * 项目内部的数据类型非法制过滤
      * @param {MagibitActuator.InnerNumberType} innerType

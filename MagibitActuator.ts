@@ -4,28 +4,11 @@
 //% weight=10 icon="\uf21c" color=#FF7210 block="Magibit Actuator"
 namespace MagibitActuator {
 
-    export enum Motor {
-        M1,
-        M2
-    }
-
-    export enum MotorDirection {
-        Forward,
-        Backward
-    }
-
-    export enum LEDPin {
-        P0,
-        P1,
-        P2,
-        P13,
-        P16
-    }
-
-    export enum LEDState {
-        ON,
-        OFF
-    }
+    import Motor = magibit.Motor;
+    import MotorDirection = magibit.MotorDirection;
+    import InnerNumberType = magibit.InnerNumberType;
+    import LEDPin = magibit.LEDPin;
+    import LEDState = magibit.LEDState;
 
     /**
      * change motor's speed and direction
@@ -36,7 +19,7 @@ namespace MagibitActuator {
     //% speed.min=0 speed.max=1023
     export function motorSetSpeed(motor: Motor, direction: MotorDirection, speed: number): void {
 
-        let speedVal = magibit.filterInnerTypeNumber(magibit.InnerNumberType.ANALOG, speed);
+        let speedVal = magibit.filterInnerTypeNumber(InnerNumberType.ANALOG, speed);
 
         if (motor == Motor.M1) {
             pins.digitalWritePin(DigitalPin.P8, direction);
@@ -68,7 +51,7 @@ namespace MagibitActuator {
     //% brightness.min=0 brightness.max=1023
     export function ledSetBrightness(pin: LEDPin, brightness: number): void {
 
-        let brightnessVal = magibit.filterInnerTypeNumber(magibit.InnerNumberType.ANALOG, brightness);
+        let brightnessVal = magibit.filterInnerTypeNumber(InnerNumberType.ANALOG, brightness);
 
         switch (pin) {
             case LEDPin.P0:
